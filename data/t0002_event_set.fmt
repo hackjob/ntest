@@ -1,16 +1,6 @@
--- spool nonpartitioned table format files
-bcp Nephila_Metarisks_Candidate_Sample.dbo.t00001_event_set format nul -f d:\t0001_event_set.fmt -n -T
-bcp Nephila_Metarisks_Candidate_Sample.dbo.t00002_event_set format nul -f d:\t0002_event_set.fmt -n -T
-bcp Nephila_Metarisks_Candidate_Sample.dbo.t00001_event_loss_footprint format nul -f d:\t0001_event_loss_footprint.fmt -n -T
-bcp Nephila_Metarisks_Candidate_Sample.dbo.t00002_event_loss_footprint_event_loss_footprint format nul -f d:\t0002_event_loss_footprint.fmt -n -T
-
--- spool new csv from nonpartitioned tables
-bcp "SELECT * from Nephila_Metarisks_Candidate_Sample.dbo.t00001_event_set" queryout d:\t00001_event_set-bcpout.csv -t, -c -S . -d Nephila_Metarisks_Candidate_Sample -T
-bcp "SELECT * from Nephila_Metarisks_Candidate_Sample.dbo.t00002_event_set" queryout d:\t00002_event_set-bcpout.csv -t, -c -S . -d Nephila_Metarisks_Candidate_Sample -T
-bcp "SELECT * from Nephila_Metarisks_Candidate_Sample.dbo.t00001_event_loss_footprint" queryout d:\t00001_event_loss_footprint-bcpout.csv -t',' -c -S . -d Nephila_Metarisks_Candidate_Sample -T
-bcp "SELECT * from Nephila_Metarisks_Candidate_Sample.dbo.t00002_event_loss_footprint" queryout d:\t00002_event_loss_footprint-bcpout.csv -t',' -c -S . -d Nephila_Metarisks_Candidate_Sample -T
-
--- solution 1b-1 "load partitioned table via bcp"
-bcp Nephila_Metarisks_Candidate_Sample.dbo.t00001_event_loss_footprint_part in d:\t00001_event_loss_footprint-bcpout.csv -f d:\t0001_event_loss_footprint.fmt -T
-xp_cmdshell 'bcp Nephila_Metarisks_Candidate_Sample.dbo.t00002_event_loss_footprint_part in d:\GITWorkspace\NTEST\data\t00001_event_loss_footprint-bcpout.csv -f d:\GITWorkspace\NTEST\data\t0002_event_loss_footprint.fmt -T'
-
+12.0
+4
+1       SQLINT              0       4       ""   1     event_id                             ""
+2       SQLINT              0       4       ""   2     event_simulation                     ""
+3       SQLINT              0       4       ""   3     event_day                            ""
+4       SQLINT              0       4       ""   4     t010_id                              ""
