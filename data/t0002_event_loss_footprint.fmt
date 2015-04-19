@@ -1,0 +1,6 @@
+12.0
+4
+1       SQLINT              0       4       ""   1     id                         ""
+2       SQLINT              0       4       ""   2     event_id                   ""
+3       SQLINT              0       4       ""   3     t031_id                    ""
+4       SQLMONEY            0       8       ""   4     loss_amount                ""
